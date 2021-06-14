@@ -1,4 +1,5 @@
 <p id="notice"><%= notice %></p>
+
 <div class="row">
   <div class="col-md-12">
     <div class="card">
@@ -13,7 +14,6 @@
             <%= link_to I18n.t('views.messages.edit_team'), edit_team_path(@team), class: 'btn btn-success btn-block mt-3' %>
             <% end %>
           </div>
-          
           <div class="col-md-8">
             <div>
               <h5><%= I18n.t('views.messages.invite_team_member') %></h5>
@@ -44,6 +44,11 @@
                       <td>
                       <% if current_user == assign.team.owner || assign.user == current_user  %>
                       <%= link_to I18n.t('views.button.delete'), team_assign_path(@team, assign), method: :delete, class: 'btn btn-sm btn-danger' %>
+                      <% end %>
+                      </td>
+                      <td>
+                      <% if current_user == assign.team.owner && assign.user != current_user  %>
+                      <%= link_to I18n.t('views.button.change_owner'), change_owner_team_path(@team, owner_id: assign.user_id), method: :patch, class: 'btn btn-sm btn-danger' %>
                       <% end %>
                       </td>
                     </tr>
