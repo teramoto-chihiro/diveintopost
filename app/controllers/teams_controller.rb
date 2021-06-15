@@ -11,13 +11,11 @@ class TeamsController < ApplicationController
   def new
     @team = Team.new
   end
-
   def edit
     if @team.owner != current_user
       redirect_to teams_url, notice: I18n.t('views.messages.cannot_edit_create_team')
     end
   end
-
   def create
     @team = Team.new(team_params)
     @team.owner = current_user
@@ -47,7 +45,6 @@ class TeamsController < ApplicationController
       render @team
     end
   end
-
   def destroy
     @team.destroy
     redirect_to teams_url, notice: I18n.t('views.messages.delete_team')

@@ -10,6 +10,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
     <title>diveintopost</title>
 
@@ -17,22 +18,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
-
   <body class="hold-transition sidebar-mini">
     <div class="wrapper">
       <%= render 'shared/layout/header' %>
       <%= render 'shared/layout/sidebar' %>
       <%= render 'shared/layout/menu' %>
-
       <div class="content-wrapper">
         <div class="content">
           <%= yield %>
         </div>
       </div>
-
       <%= render 'shared/layout/footer' %>
     </div>
-
     <%= javascript_pack_tag 'application' %>
   </body>
 </html>
