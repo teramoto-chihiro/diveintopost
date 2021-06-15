@@ -206,7 +206,8 @@ ja:
   views:
     messages:
       create_agenda: 'アジェンダ作成に成功しました！'
-      create_agenda: 'アジェンダを削除しました'
+      delete_agenda: 'アジェンダを削除しました'
+      cannot_delete_agenda: 'アジェンダを削除する権限がありません'
       create_article: '記事作成に成功しました！'
       update_article: '記事更新に成功しました！'
       assigned: 'アサインしました！'
